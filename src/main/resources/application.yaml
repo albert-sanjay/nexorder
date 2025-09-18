@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: "nexorder"
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/nexorder
+    username: postgres
+    password: postgres
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  flyway:
+    user: postgres
+    password: postgres
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+    clean-disabled: true
+server:
+  port: 8090
