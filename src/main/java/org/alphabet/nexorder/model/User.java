@@ -16,20 +16,16 @@ public class User {
     private Long id;
 
     @Column(nullable = false)
-    @NotBlank(message = "firstname cannot be empty")
     private String firstname;
 
     @Column(nullable = false)
-    @NotBlank(message = "lastname cannot be empty")
     private String lastname;
 
     @Column(nullable = false, unique = true)
-    @NotBlank(message = "email cannot be empty")
     @Email
     private String email;
 
     @Column(nullable = false)
-    @Min(value = 0, message = "age cannot be less than 0")
     private int age;
 
     @OneToMany(mappedBy = "user")

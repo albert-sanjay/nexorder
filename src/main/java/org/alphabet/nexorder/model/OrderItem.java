@@ -24,14 +24,9 @@ public class OrderItem {
     @JoinColumn(name = "product_id", nullable = false)
     private Product product;
 
-    @NotNull(message = "Quantity cannot be null")
-    @Min(value = 1, message = "Order quantity cannot be less than 1")
     private int quantity;
 
-    @NotNull
     @Column(nullable = false)
-    @DecimalMin(value = "0.0", inclusive = false, message = "price must be greater than 0.0")
-    @Digits(integer = 10, fraction = 2, message = "Price must be a valid monetary value")
     private BigDecimal price;
 
     public OrderItem() {}

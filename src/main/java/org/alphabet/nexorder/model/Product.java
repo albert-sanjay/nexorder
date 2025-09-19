@@ -17,18 +17,13 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @NotBlank(message = "product name can not be empty")
     @Column(nullable = false)
     private String name;
 
     @Column(nullable = false)
-    @NotBlank(message = " product description cannot be empty")
     private String description;
 
     @Column(nullable = false)
-    @NotNull(message = "price cannot be null")
-    @DecimalMin(value = "0.0", inclusive = false, message = "price must be greater than 0.0")
-    @Digits(fraction = 2, integer = 10, message = "price must be a valid monetary value")
     private BigDecimal price;
 
     @Column(nullable = false)
