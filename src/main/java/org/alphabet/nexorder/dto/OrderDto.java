@@ -26,6 +26,53 @@ public class OrderDto {
     @Valid
     private List<OrderItemDto> items;
 
+    public OrderDto() {}
 
+    public OrderDto(long id, Long userid, LocalDateTime orderDate, OrderStatus status, List<OrderItemDto> items) {
+        this.id = id;
+        this.userid = userid;
+        this.orderDate = orderDate;
+        this.status = status;
+        this.items = items;
+    }
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public Long getUserid() {
+        return userid;
+    }
+
+    public void setUserid(Long userid) {
+        this.userid = userid;
+    }
+
+    public LocalDateTime getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(LocalDateTime orderDate) {
+        this.orderDate = orderDate;
+    }
+
+    public OrderStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(OrderStatus status) {
+        this.status = status;
+    }
+
+    public List<OrderItemDto> getItems() {
+        return items;
+    }
+
+    public void setItems(List<OrderItemDto> items) {
+        this.items = items;
+    }
 }
