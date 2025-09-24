@@ -4,7 +4,12 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import org.alphabet.nexorder.model.User;
+import org.alphabet.nexorder.model.Role;
+import org.alphabet.nexorder.enums.Roles;
+
+
+import java.util.HashSet;
+import java.util.Set;
 
 public class UserDto {
 
@@ -24,6 +29,15 @@ public class UserDto {
     @Min(value = 0, message = "age cannot be less than 0")
     private int age;
 
+    private boolean enabled = true;
+
+    @NotBlank(message = "password is required")
+    private String password;
+
+    private Set<Role> roles = new HashSet<>();
+
+    @NotBlank(message = "username is required")
+    private String username;
 
     public Long getId() {
         return id;
@@ -64,4 +78,37 @@ public class UserDto {
     public void setAge(int age) {
         this.age = age;
     }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
 }
